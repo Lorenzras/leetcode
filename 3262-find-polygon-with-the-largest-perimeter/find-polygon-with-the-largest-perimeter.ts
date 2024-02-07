@@ -6,7 +6,6 @@ function largestPerimeter(nums: number[]): number {
     let previousElementsSum = 0;
     let ans = -1;
     for (let num of nums) {
-        console.log(num, previousElementsSum)
         if (num < previousElementsSum) {
             ans = num + previousElementsSum;
         }

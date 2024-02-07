@@ -17,7 +17,6 @@ function maxSum(nums: number[]): number {
             if(numsTotalByDigits[i] === numsTotalByDigits[j]) {
                 const total = nums[i] + nums[j];
 
-                console.log(nums[i], nums[j], total, max)
                 if(total > max) {
                     max = total;
                 }

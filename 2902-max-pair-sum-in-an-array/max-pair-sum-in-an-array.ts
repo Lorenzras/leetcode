@@ -1,6 +1,9 @@
 const parseDigits = (n: number): number => {
 
-    return n.toString().split('').reduce((max, curr) => +curr > max ? +curr : max , 0);
+    return n.toString().split('').reduce((max, curr) => {
+        const num = +curr;
+        return num > max ? num : max;
+    } , 0);
 }
 
 function maxSum(nums: number[]): number {

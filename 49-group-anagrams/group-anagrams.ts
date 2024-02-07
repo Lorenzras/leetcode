@@ -2,14 +2,14 @@ function groupAnagrams(strs: string[]): string[][] {
 
     const resultObj = strs.reduce((acc, cur) => {
         const normalized = cur.split('').sort().join('');
-        if(!acc[normalized]) {
-            acc[normalized] = [cur]
+        if(!acc.has(normalized)) {
+            acc.set(normalized, [cur]);
         } else {
-            acc[normalized].push(cur);
+            acc.get(normalized).push(cur);
         }
 
         return acc; 
     }, new Map<string, string[]>())
 
-    return Object.values(resultObj);  
+    return [...resultObj.values()];  
 };

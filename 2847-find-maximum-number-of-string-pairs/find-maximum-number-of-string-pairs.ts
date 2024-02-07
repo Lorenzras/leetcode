@@ -3,6 +3,7 @@ function maximumNumberOfStringPairs(words: string[]): number {
     const wlen = words.length;
     let pairs = 0;
     
+    const reversedWords = words.map((w) => w.split('').reverse().join(''))
 
     for(let i = 0; i < wlen; i++) {
         if(!words[i]) continue;
@@ -11,7 +12,7 @@ function maximumNumberOfStringPairs(words: string[]): number {
             if(i == j) continue;
             if(!words[j]) continue;
 
-            if(words[i] === words[j].split('').reverse().join('')){
+            if(words[i] === reversedWords[j]){
                 words[i] = undefined;
                 words[j] = undefined;
                 pairs++;

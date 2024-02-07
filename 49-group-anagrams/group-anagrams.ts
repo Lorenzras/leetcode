@@ -1,7 +1,7 @@
 function groupAnagrams(strs: string[]): string[][] {
 
     const resultObj = strs.reduce((acc, cur) => {
-        const normalized = Array.from(cur).sort().join('');
+        const normalized = cur.split('').sort().join('');
         if(!acc[normalized]) {
             acc[normalized] = [cur]
         } else {

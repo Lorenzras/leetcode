@@ -1,8 +1,8 @@
 const parseDigits = (n: number): number => {
 
     return n.toString().split('').reduce((max, curr) => {
-        const num = +curr;
-        return num > max ? num : max;
+        
+        return  +curr >  max ? +curr : max;
     } , 0);
 }
 

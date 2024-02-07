@@ -9,7 +9,7 @@ function groupAnagrams(strs: string[]): string[][] {
         }
 
         return acc; 
-    }, {} as  Record<string, string[]>)
+    }, new Map<string, string[]>())
 
     return Object.values(resultObj);  
 };

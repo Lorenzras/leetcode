@@ -8,7 +8,7 @@ function maxSum(nums: number[]): number {
     let max: number = -1;
 
     const numsTotalByDigits = nums.map((n) => parseDigits(n)); 
-    console.log(numsTotalByDigits);
+
     for(let i = 0; i < nlen; i++) {
         const comparatorSum = parseDigits(nums[i]);
 

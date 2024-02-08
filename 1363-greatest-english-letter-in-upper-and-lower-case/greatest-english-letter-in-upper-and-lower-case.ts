@@ -1,17 +1,15 @@
 function greatestLetter(ss: string): string {
 
-    let curCharCode = 0;
+    const set = [];
 
     for(let s of ss) {
         const uC = s.toUpperCase()
         if(ss.includes(uC) && ss.includes(s.toLowerCase())){
-            if(uC.charCodeAt(0) > curCharCode){
-                curCharCode = uC.charCodeAt(0);
-            } 
+            set.push(uC.charCodeAt(0));
         }
     }
 
-    if(!curCharCode) return '';
-    
-    return String.fromCharCode(curCharCode);
+    if(!set.length) return '';
+
+    return String.fromCharCode(Math.max(...set));
 };

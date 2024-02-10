@@ -1,6 +1,6 @@
 
 function isValid(s: string): boolean {
-    const openBrackets: string[] = ['{', '[', '('];
+    const openBrackets = '{[(';
     const pairs: Record<string, string> = {
         ')':'(',
         ']':'[',

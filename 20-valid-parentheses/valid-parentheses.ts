@@ -1,23 +1,23 @@
+
 function isValid(s: string): boolean {
-    const pairs = [
-        "()",
-        "[]",
-        "{}",
-    ]
+    const openBrackets: string[] = ['{', '[', '('];
+    const pairs: Record<string, string> = {
+        ')':'(',
+        ']':'[',
+        '}':'{',
+    }
+    let stack: string[] = [];
 
-    let checkStr = s;
-    while (checkStr) {
-        const origLength = checkStr.length;
-        for (let c of pairs) {
-            checkStr = checkStr.replace(c, "");
-
-        }
-    
-        if (checkStr.length === origLength) {
-            return false;
+    for(let bracket of s){
+        if(openBrackets.includes(bracket)){
+            stack.push(bracket);
+        }else {
+            const stackPeek = stack[stack.length - 1];
+            if(pairs[bracket] === stackPeek){
+                stack.pop();
+            } else return false;
         }
     }
 
-
-    return true;
+    return stack.length === 0;
 };

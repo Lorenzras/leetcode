@@ -1,24 +1,26 @@
+const isPalindrome = (s: string) => {
+    for(let i = 0; i < s.length; i++){
+
+        if(s[i] !== s[s.length - i - 1]){
+            return false;
+        }
+    } 
+
+    return true;
+}
+
 function countSubstrings(s: string): number {
-    let answer = 0;
-  const len = s.length;
-  // 1. Create a table
-  const table = Array.from({length: len}, () => new Array(len).fill(0));
+    
+    let cb = s.length;
 
-  // 1. Initialize a table
-  for(let i = 0; i < table.length; i++) {
-    for(let j = 0; j < table.length; j++) {
-      if(s[i] === s[j]) table[i][j] = 1; 
-    }
-  }
+    for (let i = 0; i < s.length; i++) {
+        for (let x = i + 2; x <= s.length; x++) {
+            if(isPalindrome(s.substring(i, x))){
+                cb++;
+            }
 
-  // 2. Set a table + 3. add up all valid combinations
-  for(let i = len; i >= 0; i--) {
-    for(let j = i; j < len; j++) {
-      if(s[i] === s[j] && i !== j) {
-        table[i][j] = table[i+1][j-1];
-      }
-      answer += table[i][j];
+        }
     }
-  }
-  return answer;
+
+    return cb;
 };

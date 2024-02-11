@@ -6,8 +6,10 @@ function shiftGrid(grid: number[][], k: number): number[][] {
         flatArr.unshift(flatArr.pop());
     }
 
+
     for(let i = 0; i < grid.length; i++){
-        grid[i] = flatArr.slice(i * width, i * width + width);
+        const seg = i * width;
+        grid[i] = flatArr.slice(seg, seg + width);
     }
     
     return grid;

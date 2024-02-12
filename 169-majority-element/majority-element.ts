@@ -12,7 +12,6 @@ function majorityElement(nums: number[]): number {
             majorityEl = nums[i];
         }
 
-        //console.log(nums[i], '----', mapNums.get(nums[i]),  maxCount, majorityEl);
     }
 
 

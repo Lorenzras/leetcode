@@ -5,7 +5,7 @@ declare global {
 }
 
 Array.prototype.last = function() {
-    return this.length > 0 ? this[this.length - 1] : -1;
+    return this.length ? this[this.length - 1] : -1;
 };
 
 /**

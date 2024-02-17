@@ -10,6 +10,7 @@ function findMissingAndRepeatedValues(grid: number[][]): number[] {
             sum += num;
         }
     }
+
     ans[1] = needSum + ans[0] - sum;
     return ans; 
 };

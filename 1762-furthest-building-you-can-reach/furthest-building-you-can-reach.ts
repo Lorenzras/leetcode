@@ -35,9 +35,6 @@ function furthestBuilding(heights: number[], bricks: number, ladders: number): n
         let curr = heights[i]
         let next = heights[i+1]
         
-		// Return if you reach the end
-        if(!next) return i
-        
 		// Jump if smaller building
         if(curr >= next) continue
         
@@ -56,4 +53,6 @@ function furthestBuilding(heights: number[], bricks: number, ladders: number): n
 		// Return index. if you run out of bricks
         if(tempBricks < 0) return i
     }
+
+    return heights.length - 1;
 };

@@ -1,20 +1,20 @@
 function furthestBuilding(heights: number[], bricks: number, ladders: number): number {
-    let max = []
-    let [tempBricks, tempLadders] = [bricks, ladders]
+    let max = [];
+    let [tempBricks, tempLadders] = [bricks, ladders];
 
-    function sortedIndex(array, value) {
-        var low = 0,
+    function sortedIndex(array: number[], value: number) {
+        let low = 0,
         high = array.length;
 
         while (low < high) {
-            var mid = (low + high) >>> 1;
+            let mid = (low + high) >>> 1;
             if (array[mid] < value) low = mid + 1;
             else high = mid;
         }
         return low;
     }
 
-    function addDiff(diff) {
+    function addDiff(diff: number) {
         if(!tempLadders) return
 
         let index = sortedIndex(max, diff)
@@ -23,7 +23,7 @@ function furthestBuilding(heights: number[], bricks: number, ladders: number): n
         if(tempLadders <= max.length - 1) max.shift()  
     }
     
-    function useLadder(temp) {
+    function useLadder(temp: number) {
         if(!tempLadders) return temp
 
         let diff = max.pop()

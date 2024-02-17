@@ -1,6 +1,6 @@
 function furthestBuilding(heights: number[], bricks: number, ladders: number): number {
     let max = [];
-    let [tempBricks, tempLadders] = [bricks, ladders];
+    //let [tempBricks, tempLadders] = [bricks, ladders];
 
     function sortedIndex(array: number[], value: number) {
         let low = 0,
@@ -15,19 +15,19 @@ function furthestBuilding(heights: number[], bricks: number, ladders: number): n
     }
 
     function addDiff(diff: number) {
-        if(!tempLadders) return
+        if(!ladders) return
 
         let index = sortedIndex(max, diff)
         max.splice(index, 0, diff);
 
-        if(tempLadders <= max.length - 1) max.shift()  
+        if(ladders <= max.length - 1) max.shift()  
     }
     
     function useLadder(temp: number) {
-        if(!tempLadders) return temp
+        if(!ladders) return temp
 
         let diff = max.pop()
-        tempLadders--
+        ladders--
         return temp + diff
     }
 
@@ -45,13 +45,13 @@ function furthestBuilding(heights: number[], bricks: number, ladders: number): n
         addDiff(diff)
         
 		// Use the ladder if required to free up biggest bricks space
-        if(tempBricks < diff) tempBricks = useLadder(tempBricks)
+        if(bricks < diff) bricks = useLadder(bricks)
 
 		// Subtract bricks
-        tempBricks -= diff
+        bricks -= diff
 
 		// Return index. if you run out of bricks
-        if(tempBricks < 0) return i
+        if(bricks < 0) return i
     }
 
     return heights.length - 1;

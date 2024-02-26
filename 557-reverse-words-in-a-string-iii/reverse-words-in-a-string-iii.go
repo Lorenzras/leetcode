@@ -21,3 +21,11 @@ func reverseWords(s string) string {
 
     return string(reversed);
 }
+
+
+/* 
+Easier
+
+
+
+ */

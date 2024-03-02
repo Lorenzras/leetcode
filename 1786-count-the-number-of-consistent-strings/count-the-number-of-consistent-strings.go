@@ -13,15 +13,13 @@ func countConsistentStrings(allowed string, words []string) int {
                 }
             }
             fmt.Println("Char: " + string(s) + " " + strconv.FormatBool(foundS))
+            
+            consistent = foundS
 
             if foundS == false {
-                consistent = false
                 break;
-            } else {
-                consistent = true
-            }
+            } 
 
-            
         }
 
         if consistent == true {

@@ -7,10 +7,16 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
     }
 
-    
+    fmt.Printf("Lead %v", lead)
+
 
     cur := res
+
+    
+
     for lead != nil {
+        fmt.Printf("cur %v\n", cur)
+        
         cur = cur.Next
         lead = lead.Next
     }

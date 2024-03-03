@@ -7,6 +7,8 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
     }
 
+    
+
     cur := res
     for lead != nil {
         cur = cur.Next

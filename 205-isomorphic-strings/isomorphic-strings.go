@@ -17,5 +17,7 @@ func isIsomorphic(s string, t string) bool {
         map2[char2] = char1;
     }
 
+    fmt.Println(map1)
+    fmt.Println(map2)
     return true
 }

@@ -3,8 +3,6 @@ func pivotInteger(n int) int {
         leftSum := ((i) * (1 + i)) / 2
         rightSum := ((n - i + 1) * (i + n)) / 2
 
-        fmt.Println(i, leftSum, rightSum)
-
         if leftSum == rightSum {
             return i
         } 
